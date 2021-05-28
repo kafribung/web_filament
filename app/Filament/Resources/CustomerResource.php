@@ -30,7 +30,17 @@ class CustomerResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Columns\Text::make('name')
+                ->searchable()
+                ->sortable(),
+                Columns\Text::make('phone')
+                ->searchable()
+                ->sortable()
+                ->url(fn($customer) => "tel:{ $customer->phone }"),
+                Columns\Text::make('address')
+                ->searchable()
+                ->sortable(),
+                Columns\Text::make('created_at')->date()->label('tanggal_pembuatan'),
             ])
             ->filters([
                 //
