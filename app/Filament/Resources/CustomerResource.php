@@ -23,6 +23,13 @@ class CustomerResource extends Resource
         return $form
             ->schema([
                 Components\TextInput::make('name')
+                ->autofocus()
+                ->required(),
+                Components\TextInput::make('phone')
+                ->autofocus()
+                ->required()
+                ->placeholder('ex. +6285331459400')
+                ->label('number phone'),
             ]);
     }
 
