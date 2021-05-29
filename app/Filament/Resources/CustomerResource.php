@@ -24,7 +24,8 @@ class CustomerResource extends Resource
             ->schema([
                 Components\TextInput::make('name')
                 ->autofocus()
-                ->required(),
+                ->required()
+                ->min(3),
                 Components\TextInput::make('phone')
                 ->required()
                 ->placeholder('ex. +6285331459400')
@@ -32,7 +33,7 @@ class CustomerResource extends Resource
                 ->helpMessage('no space'),
                 Components\Textarea::make('address')
                 ->required()
-                ->disableAutocomplete()
+                ->disableAutocomplete(),
             ]);
     }
 
