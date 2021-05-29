@@ -26,10 +26,13 @@ class CustomerResource extends Resource
                 ->autofocus()
                 ->required(),
                 Components\TextInput::make('phone')
-                ->autofocus()
                 ->required()
                 ->placeholder('ex. +6285331459400')
-                ->label('number phone'),
+                ->label('Number Phone')
+                ->helpMessage('no space'),
+                Components\Textarea::make('address')
+                ->required()
+                ->disableAutocomplete()
             ]);
     }
 
