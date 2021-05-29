@@ -22,7 +22,7 @@ class CustomerResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Components\TextInput::make('name')
             ]);
     }
 
