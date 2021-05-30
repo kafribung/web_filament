@@ -10,4 +10,10 @@ class Customer extends Model
     use HasFactory;
 
     protected $guarded = ['created_at', 'updated_at'];
+
+    // Relation one to many
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
 }

@@ -52,6 +52,7 @@ class CustomerResource extends Resource
                 Columns\Text::make('address')
                 ->searchable()
                 ->sortable(),
+                Columns\Column::make('category.tile'),
                 Columns\Text::make('created_at')->date()->label('tanggal_pembuatan'),
             ])
             ->filters([

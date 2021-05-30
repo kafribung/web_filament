@@ -9,6 +9,17 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title'];
-    public $timestamps   = false;
+    // Massassigment
+    protected $fillable = [
+        'title'
+    ];
+
+    // Timestamps
+    public $timestamps = false;
+
+    // Relation one to many
+    public function customer()
+    {
+        return $this->belongsTo('App\Models\Customer');
+    }
 }
