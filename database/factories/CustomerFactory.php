@@ -25,6 +25,8 @@ class CustomerFactory extends Factory
             'name'    => $this->faker->firstNameMale,
             'phone'   => $this->faker->e164PhoneNumber,
             'address' => $this->faker->streetName,
+            'img'     => 'img_customers/default_customer.jpg',
+            'category_id' => rand(1,2),
         ];
     }
 }
