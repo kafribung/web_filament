@@ -30,7 +30,7 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                
             ])
             ->filters([
                 //
