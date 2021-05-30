@@ -17,4 +17,10 @@ class Customer extends Model
         return $this->belongsTo(Category::class);
     }
 
+    // Mutator IMG
+    public function getTakeImgAttribute()
+    {
+        return url('storage', $this->img);
+    }
+
 }
