@@ -11,9 +11,10 @@ class Customer extends Model
 
     protected $guarded = ['created_at', 'updated_at'];
 
-    // Relation one to many
-    public function categories()
+   // Relation one to many
+    public function category()
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
+
 }

@@ -17,9 +17,10 @@ class Category extends Model
     // Timestamps
     public $timestamps = false;
 
+    
     // Relation one to many
-    public function customer()
+    public function customers()
     {
-        return $this->belongsTo('App\Models\Customer');
+        return $this->hasMany('App\Models\Customer');
     }
 }
