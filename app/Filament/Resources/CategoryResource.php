@@ -22,7 +22,10 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Components\TextInput::make('title')
+                ->required()
+                ->autofocus()
+                ->disableAutocomplete(),
             ]);
     }
 
@@ -30,7 +33,9 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                
+                Columns\Text::make('title')
+                ->searchable()
+                ->sortable()
             ])
             ->filters([
                 //
