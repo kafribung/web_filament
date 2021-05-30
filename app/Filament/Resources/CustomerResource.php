@@ -18,6 +18,7 @@ class CustomerResource extends Resource
     public static $icon = 'heroicon-o-collection';
     public static $model = Customer::class;
 
+
     public static function form(Form $form)
     {
         return $form
