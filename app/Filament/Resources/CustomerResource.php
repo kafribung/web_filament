@@ -42,6 +42,8 @@ class CustomerResource extends Resource
     {
         return $table
             ->columns([
+                Columns\Image::make('takeImg')
+                ->size(100),
                 Columns\Text::make('name')
                 ->searchable()
                 ->sortable(),
