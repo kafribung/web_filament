@@ -12,6 +12,7 @@ use Filament\Resources\Tables\Columns;
 use Filament\Resources\Forms\Components;
 use App\Filament\Resources\CustomerResource\Pages;
 use App\Filament\Resources\CustomerResource\RelationManagers;
+use Filament\Forms\Components\Component;
 
 class CustomerResource extends Resource
 {
@@ -23,6 +24,13 @@ class CustomerResource extends Resource
     {
         return $form
             ->schema([
+                Components\FileUpload::make('img')
+                ->required()
+                ->placeholder('Drag and drop file')
+                ->acceptedFileTypes(['image/*'])
+                ->directory('img_customers')
+                ->imagePreviewHeight(200)
+                ->imageCropAspectRatio('1:1'),
                 Components\TextInput::make('name')
                 ->autofocus()
                 ->required()
@@ -35,6 +43,10 @@ class CustomerResource extends Resource
                 Components\Textarea::make('address')
                 ->required()
                 ->disableAutocomplete(),
+                // Relation one to many
+                Components\BelongsToSelect::make('category_id')
+                ->relationship('category', 'title')
+                ->preload(),
             ]);
     }
 
