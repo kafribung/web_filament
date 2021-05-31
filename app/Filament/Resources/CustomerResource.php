@@ -46,7 +46,8 @@ class CustomerResource extends Resource
                 // Relation one to many
                 Components\BelongsToSelect::make('category_id')
                 ->relationship('category', 'title')
-                ->preload(),
+                ->preload()
+                ->required(),
             ]);
     }
 
