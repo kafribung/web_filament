@@ -24,7 +24,7 @@ class CategoryResource extends Resource
             ->schema([
                 Components\TextInput::make('title')
                 ->required()
-                ->autofocus()
+                // ->autofocus()
                 ->disableAutocomplete(),
             ]);
     }
