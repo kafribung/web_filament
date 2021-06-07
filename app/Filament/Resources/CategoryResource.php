@@ -23,7 +23,7 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 Components\TextInput::make('title')
-                // ->required()
+                ->required()
                 ->autofocus()
                 ->disableAutocomplete(),
             ]);
