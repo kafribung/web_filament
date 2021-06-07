@@ -35,7 +35,7 @@ class CategoryResource extends Resource
             ->columns([
                 Columns\Text::make('title')
                 ->searchable()
-                // ->sortable()
+                ->sortable()
             ])
             ->filters([
                 //
