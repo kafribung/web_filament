@@ -39,13 +39,6 @@ class CategoryResource extends Resource
             ]);
     }
 
-    // public static function relations()
-    // {
-    //     return [
-    //         //
-    //     ];
-    // }
-
     public static function routes()
     {
         return [
